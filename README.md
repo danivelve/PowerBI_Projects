@@ -1,31 +1,31 @@
-📈 Power BI Projects Portfolio
+# 📈 Power BI Projects Portfolio
 
 Welcome to my Power BI Projects portfolio.
 This repository showcases interactive dashboards and analytics solutions built to support business decision-making through clear data storytelling.
 
-📁 Projects
+## 📁 Projects
 🔹 Product Transfer Volumes Analysis
 
-📂 Folder: Project1_ProductTransfer_Volumes
+## 📂 Folder: Project1_ProductTransfer_Volumes
 ✔ Volume trend analysis
 ✔ Operational performance insights
 ✔ Interactive visuals
 
 🔹 Global Transactions & Sales Dashboard
 
-📂 Folder: Project2_GlobalTransactions_Sales
+## 📂 Folder: Project2_GlobalTransactions_Sales
 ✔ Sales performance by region
 ✔ KPI tracking
 ✔ Executive-level reporting
 
 🔹 Billionaire Wealth Analysis
 
-📂 Folder: Project3_Billionaire_Analysis
+## 📂 Folder: Project3_Billionaire_Analysis
 ✔ Wealth distribution analysis
 ✔ Industry and geography insights
 ✔ Dynamic Power BI visuals
 
-🛠 Tools & Skills
+## 🛠 Tools & Skills
 
 Power BI
 
