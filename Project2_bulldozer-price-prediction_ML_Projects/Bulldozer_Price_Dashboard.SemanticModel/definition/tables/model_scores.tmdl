@@ -1,0 +1,59 @@
+table model_scores
+
+	measure 'Model RMSLE' = MIN ( model_scores[rmsle] )
+		formatString: 0.000
+
+	measure 'Model MAE' = MIN ( model_scores[mae] )
+		formatString: \$#,0
+
+	measure 'R Squared' = MAX ( model_scores[r2] )
+		formatString: 0.000
+
+	measure 'Original RF RMSLE' = CALCULATE ( [Model RMSLE], model_scores[model] = "Original RF" )
+		formatString: 0.000
+
+	measure 'CatBoost RMSLE' = CALCULATE ( [Model RMSLE], model_scores[model] = "CatBoost" )
+		formatString: 0.000
+
+	measure 'Blend RMSLE' = CALCULATE ( [Model RMSLE], model_scores[model] = "Top-3 blend" )
+		formatString: 0.000
+
+	measure 'Blend Improvement' = 1 - DIVIDE ( [Blend RMSLE], [Original RF RMSLE] )
+		formatString: 0.0%
+
+	column model
+		dataType: string
+		summarizeBy: none
+		sourceColumn: model
+
+	column model_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: model_type
+
+	column rmsle
+		dataType: double
+		summarizeBy: none
+		sourceColumn: rmsle
+
+	column mae
+		dataType: double
+		summarizeBy: none
+		sourceColumn: mae
+
+	column r2
+		dataType: double
+		summarizeBy: none
+		sourceColumn: r2
+
+	partition model_scores = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "model_scores.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"model", type text}, {"model_type", type text}, {"rmsle", type number}, {"mae", type number}, {"r2", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

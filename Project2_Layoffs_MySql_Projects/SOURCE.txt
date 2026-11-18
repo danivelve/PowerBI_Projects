@@ -1,0 +1,45 @@
+Project: Project2_Layoffs_Dataset_Cleanup_&_Validation
+Category folder: MySql_Projects
+Date copied: 2026-11-17
+Files copied: 39
+
+Original full path of every file copied:
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.pbip
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\.platform
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition.pbir
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\report.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\version.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\pages.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\details\page.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\details\visuals\details_bar_stage\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\details\visuals\details_line_running\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\details\visuals\details_slicer_country\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\details\visuals\details_slicer_industry\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\details\visuals\details_slicer_year\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\details\visuals\details_table_companies\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\details\visuals\details_title\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\overview\page.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\overview\visuals\overview_bar_company\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\overview\visuals\overview_bar_country\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\overview\visuals\overview_bar_industry\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\overview\visuals\overview_card_1\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\overview\visuals\overview_card_2\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\overview\visuals\overview_card_3\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\overview\visuals\overview_card_4\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\overview\visuals\overview_col_year\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\overview\visuals\overview_line_monthly\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\overview\visuals\overview_slicer_country\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\overview\visuals\overview_slicer_industry\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\overview\visuals\overview_slicer_year\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\definition\pages\overview\visuals\overview_title\visual.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\StaticResources\RegisteredResources\LayoffsTheme.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.Report\StaticResources\SharedResources\BaseThemes\CY24SU10.json
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.SemanticModel\.platform
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.SemanticModel\definition.pbism
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.SemanticModel\definition\database.tmdl
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.SemanticModel\definition\expressions.tmdl
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.SemanticModel\definition\model.tmdl
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\powerbi\World_Layoffs_Dashboard.SemanticModel\definition\tables\layoffs.tmdl
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs.csv
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\data\raw\layoffs.csv
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MySql_Projects\Project2_Layoffs_Dataset_Cleanup_&_Validation\layoffs-sql-project\data\cleaned\layoffs_cleaned.csv

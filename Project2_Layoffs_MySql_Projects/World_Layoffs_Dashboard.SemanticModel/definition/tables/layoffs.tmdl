@@ -1,0 +1,160 @@
+table layoffs
+	lineageTag: 2afea5d7-6b04-4dc4-b632-18d1eae0cd52
+
+	measure 'Total Laid Off' = SUM(layoffs[total_laid_off])
+		formatString: #,0
+		displayFolder: Totals
+		lineageTag: fdbae9ca-1027-4433-a6b6-07946a51949f
+
+	measure 'Layoff Events' = COUNTROWS(layoffs)
+		formatString: #,0
+		displayFolder: Totals
+		lineageTag: bcf636c1-7957-4ba9-bf6f-aa5ed0a011fe
+
+	measure 'Companies Affected' = DISTINCTCOUNT(layoffs[company])
+		formatString: #,0
+		displayFolder: Totals
+		lineageTag: 26c8427f-72f2-4a0c-96f2-b54dac3cb863
+
+	measure 'Countries' = DISTINCTCOUNT(layoffs[country])
+		formatString: #,0
+		displayFolder: Totals
+		lineageTag: 4c4aa6cd-b1a4-4e3f-aef3-5e5185bd90ad
+
+	measure 'Full Shutdowns' = CALCULATE(COUNTROWS(layoffs), layoffs[percentage_laid_off] = 1) + 0
+		formatString: #,0
+		displayFolder: Totals
+		lineageTag: 9ea93de4-78e0-4858-a69d-0f717ede0d39
+
+	measure 'Avg % Laid Off' = AVERAGE(layoffs[percentage_laid_off])
+		formatString: 0.0%
+		displayFolder: Ratios
+		lineageTag: 2954320b-d7de-432f-b4c5-ed040018fd28
+
+	measure 'US Share of Layoffs' = DIVIDE(CALCULATE([Total Laid Off], layoffs[country] = "United States"), CALCULATE([Total Laid Off], ALL(layoffs[country])))
+		formatString: 0.0%
+		displayFolder: Ratios
+		lineageTag: a196bcfa-4bd7-4318-aeb0-063c1aa48bae
+
+	measure 'Max Funds Raised ($M)' = MAX(layoffs[funds_raised_millions])
+		formatString: #,0
+		displayFolder: Totals
+		lineageTag: 6dc1aa44-d08e-4c54-924c-659da1dbccec
+
+	measure 'Running Total Laid Off' = VAR _m = MAX(layoffs[month_start]) RETURN CALCULATE([Total Laid Off], FILTER(ALLSELECTED(layoffs[month_start]), layoffs[month_start] <= _m))
+		formatString: #,0
+		displayFolder: Trend
+		lineageTag: b73a993f-98a1-4a39-870c-fdae225e7d7e
+
+	column company
+		dataType: string
+		lineageTag: 0d380686-ed26-4b11-aaea-269eb7451c64
+		summarizeBy: none
+		sourceColumn: company
+
+		annotation SummarizationSetBy = Automatic
+
+	column location
+		dataType: string
+		lineageTag: a9668f86-16be-4313-bed0-813d007aa9f1
+		summarizeBy: none
+		sourceColumn: location
+
+		annotation SummarizationSetBy = Automatic
+
+	column industry
+		dataType: string
+		lineageTag: d0c0458a-3d9e-43d2-b616-371125638457
+		summarizeBy: none
+		sourceColumn: industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_laid_off
+		dataType: int64
+		formatString: #,0
+		lineageTag: 913c3fc2-c1d9-4e13-babe-8bd893af0383
+		summarizeBy: sum
+		sourceColumn: total_laid_off
+
+		annotation SummarizationSetBy = Automatic
+
+	column percentage_laid_off
+		dataType: double
+		formatString: 0%
+		lineageTag: 2db16bf6-d8d4-4bdd-a6dd-11eb3c8053a6
+		summarizeBy: none
+		sourceColumn: percentage_laid_off
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 48aa8576-8665-4c4d-afd5-569c4f1b0856
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+	column stage
+		dataType: string
+		lineageTag: 9c47aa80-c5f0-4916-87d1-c2abc5fe691f
+		summarizeBy: none
+		sourceColumn: stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 29319e85-3243-4aa6-bfcb-af5de56b0151
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column funds_raised_millions
+		dataType: double
+		formatString: #,0
+		lineageTag: cd1d179a-f0aa-4526-a8b4-18ccd98832c1
+		summarizeBy: none
+		sourceColumn: funds_raised_millions
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: bce43ff1-a5b9-41a2-b8a4-330f9f6f4a98
+		summarizeBy: none
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_start
+		dataType: dateTime
+		formatString: mmm yyyy
+		lineageTag: 3bd4e631-9b5e-4351-88c3-d07e1c15388e
+		summarizeBy: none
+		sourceColumn: month_start
+
+		annotation SummarizationSetBy = Automatic
+
+	partition layoffs = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(CsvFilePath), [Delimiter = ",", Columns = 9, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    ChangedType = Table.TransformColumnTypes(PromotedHeaders, {
+				        {"company", type text}, {"location", type text}, {"industry", type text},
+				        {"total_laid_off", Int64.Type}, {"percentage_laid_off", type number}, {"date", type date},
+				        {"stage", type text}, {"country", type text}, {"funds_raised_millions", type number}
+				    }, "en-US"),
+				    AddedYear = Table.AddColumn(ChangedType, "year", each if [date] = null then null else Date.Year([date]), Int64.Type),
+				    AddedMonth = Table.AddColumn(AddedYear, "month_start", each if [date] = null then null else Date.StartOfMonth([date]), type date)
+				in
+				    AddedMonth
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "World_Layoffs_Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e0796d79-f193-4609-99d3-bea260f5a1a0"
+  }
+}

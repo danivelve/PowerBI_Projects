@@ -1,0 +1,3 @@
+expression DataFolder = "D:\Env't\Video_Tution\Udemy\Data_Analysis\MachineLearning_Projects\Project2_bulldozer-price-prediction\data\processed\powerbi\" meta [IsParameterQuery = true, Type = "Text", IsParameterQueryRequired = true]
+
+	annotation PBI_ResultType = Text

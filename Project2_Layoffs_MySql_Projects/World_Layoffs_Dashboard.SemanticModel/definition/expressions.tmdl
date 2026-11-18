@@ -1,0 +1,7 @@
+/// Full path to data/cleaned/layoffs_cleaned.csv on your machine.
+/// Change it in Power BI Desktop: Transform data > Edit parameters.
+expression CsvFilePath = "C:\layoffs-sql-project\data\cleaned\layoffs_cleaned.csv" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = "Text"]
+	lineageTag: e2288354-563c-4397-bbce-61bf13a46e22
+
+	annotation PBI_ResultType = Text
+

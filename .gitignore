@@ -1,0 +1,5 @@
+# Data files over GitHub's 100 MB limit (originals are in MachineLearning_Projects)
+/Project2_bulldozer-price-prediction_ML_Projects/data/processed/train_tmp.csv
+/Project2_bulldozer-price-prediction_ML_Projects/data/raw/bluebook-for-bulldozers/Train.csv
+/Project2_bulldozer-price-prediction_ML_Projects/data/raw/bluebook-for-bulldozers/Train/Train.csv
+/Project2_bulldozer-price-prediction_ML_Projects/data/raw/bluebook-for-bulldozers/TrainAndValid.csv

@@ -1,0 +1,26 @@
+table time_validation
+
+	measure 'Yearly RMSLE' = MAX ( time_validation[rmsle] )
+		formatString: 0.000
+
+	column validation_year
+		dataType: string
+		summarizeBy: none
+		sourceColumn: validation_year
+
+	column rmsle
+		dataType: double
+		summarizeBy: none
+		sourceColumn: rmsle
+
+	partition time_validation = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "time_validation.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"validation_year", type text}, {"rmsle", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

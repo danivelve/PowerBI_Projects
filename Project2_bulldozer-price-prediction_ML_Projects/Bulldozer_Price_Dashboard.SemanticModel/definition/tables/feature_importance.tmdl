@@ -1,0 +1,29 @@
+table feature_importance
+
+	measure 'SHAP Importance' = MAX ( feature_importance[shap_importance] )
+		formatString: 0.000
+
+	measure 'SHAP Importance Top 7' = IF ( RANKX ( ALL ( feature_importance[feature] ), [SHAP Importance] ) <= 7, [SHAP Importance] )
+		formatString: 0.000
+
+	column feature
+		dataType: string
+		summarizeBy: none
+		sourceColumn: feature
+
+	column shap_importance
+		dataType: double
+		summarizeBy: none
+		sourceColumn: shap_importance
+
+	partition feature_importance = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "feature_importance.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"feature", type text}, {"shap_importance", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

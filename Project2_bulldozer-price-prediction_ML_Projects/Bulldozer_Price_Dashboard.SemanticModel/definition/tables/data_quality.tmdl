@@ -1,0 +1,35 @@
+table data_quality
+
+	measure 'Missing Share' = MAX ( data_quality[pct_missing] )
+		formatString: 0.0%
+
+	measure 'Missing Share Top 10' = IF ( RANKX ( ALL ( data_quality[column_name] ), [Missing Share], , DESC, SKIP ) <= 10, [Missing Share] )
+		formatString: 0.0%
+
+	measure 'Columns With Gaps' = CALCULATE ( COUNTROWS ( data_quality ), data_quality[pct_missing] > 0 )
+		formatString: #,0
+
+	measure 'Columns Over Half Empty' = CALCULATE ( COUNTROWS ( data_quality ), data_quality[pct_missing] > 0.5 )
+		formatString: #,0
+
+	column column_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: column_name
+
+	column pct_missing
+		dataType: double
+		summarizeBy: none
+		sourceColumn: pct_missing
+
+	partition data_quality = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "data_quality.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"column_name", type text}, {"pct_missing", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

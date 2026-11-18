@@ -1,0 +1,40 @@
+table learning_curve
+
+	measure 'Train RMSLE' = MAX ( learning_curve[train_rmsle] )
+		formatString: 0.000
+
+	measure 'Validation RMSLE' = MAX ( learning_curve[valid_rmsle] )
+		formatString: 0.000
+
+	column training_rows
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: training_rows
+
+	column rows_label
+		dataType: string
+		summarizeBy: none
+		sourceColumn: rows_label
+		sortByColumn: training_rows
+
+	column train_rmsle
+		dataType: double
+		summarizeBy: none
+		sourceColumn: train_rmsle
+
+	column valid_rmsle
+		dataType: double
+		summarizeBy: none
+		sourceColumn: valid_rmsle
+
+	partition learning_curve = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "learning_curve.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"training_rows", Int64.Type}, {"rows_label", type text}, {"train_rmsle", type number}, {"valid_rmsle", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

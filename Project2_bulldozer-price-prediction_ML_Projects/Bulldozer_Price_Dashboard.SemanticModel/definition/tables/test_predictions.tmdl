@@ -1,0 +1,115 @@
+table test_predictions
+
+	measure 'Test Sales' = COUNTROWS ( test_predictions )
+		formatString: #,0
+
+	measure 'Median Predicted Price' = MEDIAN ( test_predictions[predicted_price] )
+		formatString: \$#,0
+
+	measure 'Lowest Predicted Price' = MIN ( test_predictions[predicted_price] )
+		formatString: \$#,0
+
+	measure 'Highest Predicted Price' = MAX ( test_predictions[predicted_price] )
+		formatString: \$#,0
+
+	measure 'Median Predicted Known Age' = IF ( SELECTEDVALUE ( test_predictions[age_band] ) <> "Unknown", [Median Predicted Price] )
+		formatString: \$#,0
+
+	column sales_id
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: sales_id
+
+	column sale_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: sale_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column sale_year
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: sale_year
+
+	column sale_month
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: sale_month
+
+	column month_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: month_name
+		sortByColumn: sale_month
+
+	column weekday_order
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: weekday_order
+
+	column weekday
+		dataType: string
+		summarizeBy: none
+		sourceColumn: weekday
+		sortByColumn: weekday_order
+
+	column state
+		dataType: string
+		summarizeBy: none
+		sourceColumn: state
+
+	column product_group
+		dataType: string
+		summarizeBy: none
+		sourceColumn: product_group
+
+	column product_size
+		dataType: string
+		summarizeBy: none
+		sourceColumn: product_size
+		sortByColumn: product_size_order
+
+	column product_size_order
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: product_size_order
+
+	column year_made
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: year_made
+
+	column machine_age
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: machine_age
+
+	column age_band
+		dataType: string
+		summarizeBy: none
+		sourceColumn: age_band
+		sortByColumn: age_band_order
+
+	column age_band_order
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: age_band_order
+
+	column predicted_price
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: predicted_price
+
+	partition test_predictions = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "test_predictions.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"sales_id", Int64.Type}, {"sale_date", type date}, {"sale_year", Int64.Type}, {"sale_month", Int64.Type}, {"month_name", type text}, {"weekday_order", Int64.Type}, {"weekday", type text}, {"state", type text}, {"product_group", type text}, {"product_size", type text}, {"product_size_order", Int64.Type}, {"year_made", Int64.Type}, {"machine_age", Int64.Type}, {"age_band", type text}, {"age_band_order", Int64.Type}, {"predicted_price", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

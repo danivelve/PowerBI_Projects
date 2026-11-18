@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Bulldozer_Price_Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ef965c1c-2de6-5439-9ea8-4dff8d4a8d58"
+  }
+}

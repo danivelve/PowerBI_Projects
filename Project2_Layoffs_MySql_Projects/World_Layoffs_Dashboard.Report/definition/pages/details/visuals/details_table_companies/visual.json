@@ -1,0 +1,166 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "details_table_companies",
+  "position": {
+    "x": 440,
+    "y": 346,
+    "z": 1200,
+    "height": 366,
+    "width": 820,
+    "tabOrder": 1200
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "layoffs"
+                    }
+                  },
+                  "Property": "company"
+                }
+              },
+              "queryRef": "layoffs.company",
+              "nativeQueryRef": "company",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "layoffs"
+                    }
+                  },
+                  "Property": "industry"
+                }
+              },
+              "queryRef": "layoffs.industry",
+              "nativeQueryRef": "industry",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "layoffs"
+                    }
+                  },
+                  "Property": "country"
+                }
+              },
+              "queryRef": "layoffs.country",
+              "nativeQueryRef": "country",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "layoffs"
+                    }
+                  },
+                  "Property": "stage"
+                }
+              },
+              "queryRef": "layoffs.stage",
+              "nativeQueryRef": "stage",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "layoffs"
+                    }
+                  },
+                  "Property": "Total Laid Off"
+                }
+              },
+              "queryRef": "layoffs.Total Laid Off",
+              "nativeQueryRef": "Total Laid Off"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "layoffs"
+                    }
+                  },
+                  "Property": "Avg % Laid Off"
+                }
+              },
+              "queryRef": "layoffs.Avg % Laid Off",
+              "nativeQueryRef": "Avg % Laid Off"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "layoffs"
+                    }
+                  },
+                  "Property": "Max Funds Raised ($M)"
+                }
+              },
+              "queryRef": "layoffs.Max Funds Raised ($M)",
+              "nativeQueryRef": "Max Funds Raised ($M)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "layoffs"
+                  }
+                },
+                "Property": "Total Laid Off"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Companies ranked by layoffs'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

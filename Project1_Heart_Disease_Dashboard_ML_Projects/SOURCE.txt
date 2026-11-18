@@ -1,0 +1,13 @@
+Project: Project1_heartDisease
+Category folder: MachineLearning_Projects
+Date copied: 2026-11-17
+Files copied: 7
+
+Original full path of every file copied:
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MachineLearning_Projects\Project1_heartDisease\powerbi\Heart_Disease_Dashboard.pbix
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MachineLearning_Projects\Project1_heartDisease\data\heart-disease.csv
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MachineLearning_Projects\Project1_heartDisease\data\raw\heart-disease.csv
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MachineLearning_Projects\Project1_heartDisease\data\processed\data_dictionary.csv
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MachineLearning_Projects\Project1_heartDisease\data\processed\data_quality_log.csv
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MachineLearning_Projects\Project1_heartDisease\data\processed\factor_ranking.csv
+D:\Env't\Video_Tution\Udemy\Data_Analysis\MachineLearning_Projects\Project1_heartDisease\data\processed\heart_disease_clean.csv

@@ -1,0 +1,21 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DataFolder", "sales", "test_predictions", "data_quality", "model_scores", "accuracy_summary", "time_validation", "learning_curve", "feature_importance", "error_by_price_band"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+ref table sales
+ref table test_predictions
+ref table data_quality
+ref table model_scores
+ref table accuracy_summary
+ref table time_validation
+ref table learning_curve
+ref table feature_importance
+ref table error_by_price_band

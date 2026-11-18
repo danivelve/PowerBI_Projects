@@ -1,0 +1,33 @@
+{
+  "name": "LayoffsTheme",
+  "dataColors": [
+    "#C8423B",
+    "#1B2A41",
+    "#5B6B82",
+    "#E8A33D",
+    "#8A97AB",
+    "#2E7D5B",
+    "#D98A84",
+    "#3E5A80"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#1A1D24",
+  "tableAccent": "#C8423B",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 12,
+      "color": "#1B2A41"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 28,
+      "color": "#1B2A41"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#5B6B82"
+    }
+  }
+}
